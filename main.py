@@ -33,3 +33,20 @@ node_2 = Node("Wigglytuff")
 node_1.next = node_2
 print(node_1.value, "->", node_1.next.value)
 print(node_2.value, "->", node_2.next)
+
+
+
+# Problem 3: Add First
+def add_first(head, new_node):
+  new_node.next = head
+  return new_node
+
+
+# Using the Linked List from Problem 2
+print("****")
+print(node_1.value, "->", node_1.next.value)
+
+new_node = Node("Ditto")
+node_1 = add_first(node_1, new_node)
+
+print(node_1.value, "->", node_1.next.value)
