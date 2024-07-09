@@ -73,3 +73,23 @@ num2.next = num3
 head = num1
 tail = get_tail(head)
 print(tail)
+
+# Problem 5: Replace Node
+def ll_replace(head, original, replacement):
+  current = head 
+  while current:
+    if current.value == original:
+      current.value = replacement
+    current = current.next
+
+
+num3 = Node(5)
+num2 = Node(6, num3)
+num1 = Node(5, num2)
+# initial linked list: 5 -> 6 -> 5
+print(num1.value, "->", num1.next.value, "->", num1.next.next.value)
+
+head = num1
+ll_replace(head, 5, "banana")
+# updated linked list: "banana" -> 6 -> "banana"
+print(num1.value, "->", num1.next.value, "->", num1.next.next.value)
