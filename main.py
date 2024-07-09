@@ -34,8 +34,6 @@ node_1.next = node_2
 print(node_1.value, "->", node_1.next.value)
 print(node_2.value, "->", node_2.next)
 
-
-
 # Problem 3: Add First
 def add_first(head, new_node):
   new_node.next = head
@@ -50,3 +48,28 @@ new_node = Node("Ditto")
 node_1 = add_first(node_1, new_node)
 
 print(node_1.value, "->", node_1.next.value)
+
+
+# Problem 4: Get Tail
+
+def get_tail(head):
+  if not head:
+    return None
+
+  current = head
+  while current.next:
+    current = current.next
+
+  return current.value
+
+num1 = Node(1)
+num2 = Node(2)
+num3 = Node(3)
+
+num1.next = num2
+num2.next = num3
+
+# linked list: num1->num2->num3
+head = num1
+tail = get_tail(head)
+print(tail)
