@@ -93,3 +93,41 @@ head = num1
 ll_replace(head, 5, "banana")
 # updated linked list: "banana" -> 6 -> "banana"
 print(num1.value, "->", num1.next.value, "->", num1.next.next.value)
+
+# Problem 6: List Nodes
+def listify_first_n(head, n):
+  pass
+  ls = []
+  current = head
+  while n > 0 and current:
+    ls.append(current.value)
+    current = current.next
+    n -= 1
+  return ls
+
+# linked list: a -> b -> c
+a = Node("a")
+b = Node("b")
+c = Node("c")
+
+# Linking nodes
+a.next = b
+b.next = c
+
+head = a
+lst = listify_first_n(head,2)
+print(lst)
+
+# linked list: j -> k -> l 
+j = Node('j')
+k = Node('k')
+l = Node('l')
+
+# Linking Nodes
+j.next = k
+k.next = l
+
+head2 = j
+lst2 = listify_first_n(head2, 5)
+print(lst2)
+
