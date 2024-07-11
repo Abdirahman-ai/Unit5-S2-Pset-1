@@ -131,3 +131,44 @@ head2 = j
 lst2 = listify_first_n(head2, 5)
 print(lst2)
 
+# Problem 7: Insert Value
+def ll_insert(head, val, i):
+
+  # Handle the case where the list is initially empty or `i` is 0
+  if not head or i == 0:
+      return Node(val, head)
+
+  length = 0
+  current = head
+  while current:
+    length += 1
+    if length == i:
+      new_node = Node(val, current.next)
+      current.next = new_node
+    else:
+      current = current.next
+
+  if i > length:
+    current.next = Node(val)
+
+  return head
+
+# linked list: 3 -> 8 -> 12 -> 9
+head = Node(3)
+node2 = Node(8)
+node3 = Node(12)
+node4 = Node(9)
+
+head.next = node2
+node2.next = node3
+node3.next = node4
+
+ll_insert(head, 20, 2)
+
+# result linked list: 3 -> 8 -> 20 -> 12 -> 9
+# Testing for my own understanding
+curr = head 
+while curr.next: 
+  print(curr.value, "->", end=" ")
+  curr = curr.next
+print(curr.value)
