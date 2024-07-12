@@ -172,3 +172,25 @@ while curr.next:
   print(curr.value, "->", end=" ")
   curr = curr.next
 print(curr.value)
+
+
+# Problem 8: Linked Listify
+def list_to_linked_list(lst):
+  pass
+  head = Node(lst[0])
+  current = head
+  for i in range(1, len(lst)):
+    new_node = Node(lst[i])
+    current.next = new_node
+    current = current.next
+  return head
+
+normal_list = ["Betty", "Veronica", "Archie", "Jughead"]
+linked_list = list_to_linked_list(normal_list)
+print(linked_list) # Only prints the head element!
+
+curr = linked_list 
+while curr.next: 
+  print(curr.value, "->", end=" ")
+  curr = curr.next
+print(curr.value)
