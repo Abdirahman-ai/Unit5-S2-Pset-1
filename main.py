@@ -173,7 +173,6 @@ while curr.next:
   curr = curr.next
 print(curr.value)
 
-
 # Problem 8: Linked Listify
 def list_to_linked_list(lst):
   pass
@@ -194,3 +193,25 @@ while curr.next:
   print(curr.value, "->", end=" ")
   curr = curr.next
 print(curr.value)
+
+# Problem 9: Doubly Linked List
+class Node2:
+  def __init__(self, value, next = None, prev = None):
+    self.value = value
+    self.next = next
+    self.prev = prev
+
+lst = ["Poliwag", "Poliwhirl", "Poliwrath"]
+
+poliwag = Node2("Poliwag")
+poliwhirl = Node2("Poliwhirl")
+poliwrath = Node2("Poliwrath")
+
+poliwag.next = poliwhirl
+poliwhirl.next = poliwrath
+
+poliwrath.prev = poliwhirl
+poliwhirl.prev = poliwag
+
+print(poliwhirl.prev.value, "<->", poliwhirl.value, "<->", poliwhirl.next.value)
+
