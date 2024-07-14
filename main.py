@@ -215,3 +215,14 @@ poliwhirl.prev = poliwag
 
 print(poliwhirl.prev.value, "<->", poliwhirl.value, "<->", poliwhirl.next.value)
 
+# Problem 10: Print Backwards
+
+def print_reverse(tail):
+  current = tail
+  while current:
+    print(current.value, end=" ")
+    current = current.prev
+
+#              (head)                       (tail)
+# Linked List: Poliwag <-> Poliwhirl <-> Poliwrath
+print_reverse(poliwrath)
